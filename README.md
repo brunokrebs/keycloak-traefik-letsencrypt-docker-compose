@@ -16,17 +16,6 @@ Deploy Keycloak using Docker Compose:
 
 `docker compose -f keycloak-traefik-letsencrypt-docker-compose.yml -p keycloak up -d`
 
-# Backups
-
-The `backups` container in the configuration is responsible for the following:
-
-1. **Database Backup**: Creates compressed backups of the PostgreSQL database using pg_dump.
-Customizable backup path, filename pattern, and schedule through variables like `POSTGRES_BACKUPS_PATH`, `POSTGRES_BACKUP_NAME`, and `BACKUP_INTERVAL`.
-
-2. **Backup Pruning**: Periodically removes backups exceeding a specified age to manage storage. Customizable pruning schedule and age threshold with `POSTGRES_BACKUP_PRUNE_DAYS` and `DATA_BACKUP_PRUNE_DAYS`.
-
-By utilizing this container, consistent and automated backups of the essential components of your instance are ensured. Moreover, efficient management of backup storage and tailored backup routines can be achieved through easy and flexible configuration using environment variables.
-
 # keycloak-restore-database.sh Description
 
 This script facilitates the restoration of a database backup:
@@ -48,32 +37,3 @@ To make the `keycloak-restore-database.shh` script executable, run the following
 `chmod +x keycloak-restore-database.sh`
 
 Usage of this script ensures a controlled and guided process to restore the database from an existing backup.
-
-# Author
-
-I’m Vladimir Mikhalev, the [Docker Captain](https://www.docker.com/captains/vladimir-mikhalev/), but my friends can call me Valdemar.
-
-🌐 My [website](https://www.heyvaldemar.com/) with detailed IT guides\
-🎬 Follow me on [YouTube](https://www.youtube.com/channel/UCf85kQ0u1sYTTTyKVpxrlyQ?sub_confirmation=1)\
-🐦 Follow me on [Twitter](https://twitter.com/heyValdemar)\
-🎨 Follow me on [Instagram](https://www.instagram.com/heyvaldemar/)\
-🧵 Follow me on [Threads](https://www.threads.net/@heyvaldemar)\
-🐘 Follow me on [Mastodon](https://hachyderm.io/@heyValdemar)\
-🧊 Follow me on [Bluesky](https://bsky.app/profile/heyvaldemar.bsky.social)\
-🎸 Follow me on [Facebook](https://www.facebook.com/heyValdemarFB/)\
-🎥 Follow me on [TikTok](https://www.tiktok.com/@heyvaldemar)\
-💻 Follow me on [LinkedIn](https://www.linkedin.com/in/heyvaldemar/)\
-🐈 Follow me on [GitHub](https://github.com/heyvaldemar)
-
-# Communication
-
-👾 Chat with IT pros on [Discord](https://discord.gg/AJQGCCBcqf)\
-📧 Reach me at ask@sre.gg
-
-# Give Thanks
-
-💎 Support on [GitHub](https://github.com/sponsors/heyValdemar)\
-🏆 Support on [Patreon](https://www.patreon.com/heyValdemar)\
-🥤 Support on [BuyMeaCoffee](https://www.buymeacoffee.com/heyValdemar)\
-🍪 Support on [Ko-fi](https://ko-fi.com/heyValdemar)\
-💖 Support on [PayPal](https://www.paypal.com/paypalme/heyValdemarCOM)
